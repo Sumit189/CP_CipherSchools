@@ -22,6 +22,7 @@ int main(){
 	vector<int> numbers = {2,3,4};
 	vector<string> res;
 	char str[numbers.size()+1];
+	str[numbers.size()]='\0';
 	alphabets(numbers,0,numbers.size(),str);
 	
 	for(auto val: res){
