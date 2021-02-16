@@ -3,7 +3,7 @@ using namespace std;
 
 void num_toTitle(int n){
 	int rem=0;
-	string s;
+	char s[999];
 	int index=0;
 	while(n>0){
 		rem = n%26;
@@ -19,11 +19,11 @@ void num_toTitle(int n){
 		}
 	}
 	s[index]='\0';
-//	reverse(s,s+s.size());
+	reverse(s,s+strlen(s));
 	cout<<s;
 }
 
 int main(){
-	int n = 2133;
+	int n = 2;
 	num_toTitle(n);
 }
