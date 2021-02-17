@@ -38,7 +38,6 @@ int find_lastNonZero(int n){
 		return (4*find_lastNonZero(n/5)*digit[n%10])%10;
 	}
 }
-
 int main(){
 	generate_first10();
 	int n = 14;
