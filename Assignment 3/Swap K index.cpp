@@ -56,55 +56,6 @@ class SinglyLinkedList{
 		
 };
 
-Node* oddEvenNodes(Node* a){
-    if(a == NULL)
-    return NULL;
-
-    Node* odd = a;
-    Node* even = a->next;
-    Node* evenstart = even;
-    while(1){
-        if(odd == NULL || even == NULL || even->next==NULL){
-            odd->next = evenstart; 
-            break;
-        }
-        odd->next = even->next;
-        odd = even->next;
-
-        if(odd->next == NULL){
-            even->next = NULL;
-            odd->next = evenstart;
-            break;
-        }
-        even->next =  odd->next;
-        even = odd->next;
-    }
-    return a;
-}
-
-Node* removeDuplicates(Node* a){
-
-    Node* current = a;
-    Node* prev = new Node;
-    prev->next = a;
-    Node* nodestart = prev->next;
-    while(current != NULL){
-        while(current->next != NULL && prev->next->data == current->next->data){
-            current = current->next;
-        }
-        if(prev->next == current){
-            prev = prev->next;
-        }
-        else{
-            prev->next = current->next;
-        }
-        current = current->next;
-    }
-    a = nodestart;
-    return a;
-}
-
-
 int getSize(Node* a){
     int count = 0;
     while(a != NULL){
@@ -113,6 +64,7 @@ int getSize(Node* a){
     }
     return count;
 }
+
 Node* replaceKth(Node* a, int k){
     int size = getSize(a);
     if(a == NULL){
@@ -167,7 +119,7 @@ int main(){
     s1.insertEnd(10);
 
     res.head = replaceKth(s1.head, 10);
-	res.printList(); 
+     res.printList(); 
     
 
 	return 0;
